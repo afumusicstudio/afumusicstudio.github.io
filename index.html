@@ -142,9 +142,6 @@
       padding: 28px;
       border-radius: 16px;
       box-shadow: 0 6px 18px rgba(71, 44, 25, 0.10);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     .tier-card h3 {
@@ -202,21 +199,18 @@
       padding: 32px;
       border-radius: 16px;
       box-shadow: 0 6px 18px rgba(71, 44, 25, 0.10);
-      overflow: hidden;
     }
 
-    
-
-    
-
-    
+    .about-top {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
 
     .profile-photo {
-      float: left;
       width: 290px;
       height: 350px;
-      margin-right: 32px;
-      margin-bottom: 14px;
       border-radius: 20px;
       object-fit: cover;
       object-position: 18% center;
@@ -225,18 +219,12 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
-    .photo-placeholder {
-      width: 260px;
-      height: 320px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #f4b860, #9a4f24);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      font-weight: bold;
+    .about-text p {
+      margin-bottom: 18px;
+    }
+
+    .about-final {
+      margin-top: 18px;
     }
 
     .contact-box {
@@ -281,23 +269,20 @@
         font-size: 2.1rem;
       }
 
-      .about {
+      .about-top {
         grid-template-columns: 1fr;
-        grid-template-areas:
-          "photo"
-          "intro"
-          "full";
       }
 
-      .profile-photo,
-      .photo-placeholder {
+      .profile-photo {
         width: 100%;
         max-width: 320px;
+        height: auto;
         margin: 0 auto;
       }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">Afu Music Studio</div>
@@ -320,15 +305,18 @@
   <section id="services">
     <h2 class="section-title">Services</h2>
     <p class="intro-text">Afu Music Studio supports students through focused instruction, clear practice goals, and performance-centered preparation.</p>
+
     <div class="service-list">
       <div class="service-card">
         <h3>Private Lessons</h3>
         <p>Personalized instruction focused on tone, technique, scales, rhythm, musicality, confidence, and healthy practice habits.</p>
       </div>
+
       <div class="service-card">
         <h3>Audition Coaching</h3>
         <p>Preparation for honor band, All-State, college auditions, chair placements, and other performance opportunities.</p>
       </div>
+
       <div class="service-card">
         <h3>Recording Services</h3>
         <p>Audition recording support with setup, coaching, multiple takes, clean trimming, file organization, and digital delivery.</p>
@@ -342,45 +330,39 @@
 
     <div class="rates-grid">
       <div class="tier-card">
-        <div>
-          <h3>30 Minute Lesson</h3>
-          <div class="price">$40</div>
-          <p class="best-for">Best for beginners, younger students, or weekly maintenance.</p>
-          <ul>
-            <li>Quick warm-up and tone check</li>
-            <li>Focused fundamentals</li>
-            <li>One or two main goals per lesson</li>
-            <li>Short weekly practice plan</li>
-          </ul>
-        </div>
+        <h3>30 Minute Lesson</h3>
+        <div class="price">$40</div>
+        <p class="best-for">Best for beginners, younger students, or weekly maintenance.</p>
+        <ul>
+          <li>Quick warm-up and tone check</li>
+          <li>Focused fundamentals</li>
+          <li>One or two main goals per lesson</li>
+          <li>Short weekly practice plan</li>
+        </ul>
       </div>
 
       <div class="tier-card">
-        <div>
-          <h3>45 Minute Lesson</h3>
-          <div class="price">$55</div>
-          <p class="best-for">Best for students who need a balanced lesson with fundamentals and music preparation.</p>
-          <ul>
-            <li>Tone, technique, and scales</li>
-            <li>Band music or etude support</li>
-            <li>More time for feedback and correction</li>
-            <li>Great option for honor band preparation</li>
-          </ul>
-        </div>
+        <h3>45 Minute Lesson</h3>
+        <div class="price">$55</div>
+        <p class="best-for">Best for students who need a balanced lesson with fundamentals and music preparation.</p>
+        <ul>
+          <li>Tone, technique, and scales</li>
+          <li>Band music or etude support</li>
+          <li>More time for feedback and correction</li>
+          <li>Great option for honor band preparation</li>
+        </ul>
       </div>
 
       <div class="tier-card">
-        <div>
-          <h3>60 Minute Lesson</h3>
-          <div class="price">$70</div>
-          <p class="best-for">Best for serious students preparing for auditions, performances, or long-term growth.</p>
-          <ul>
-            <li>Full fundamentals routine</li>
-            <li>Technique, scales, articulation, and musicianship</li>
-            <li>Etude, audition, or solo preparation</li>
-            <li>Performance run-through and detailed feedback</li>
-          </ul>
-        </div>
+        <h3>60 Minute Lesson</h3>
+        <div class="price">$70</div>
+        <p class="best-for">Best for serious students preparing for auditions, performances, or long-term growth.</p>
+        <ul>
+          <li>Full fundamentals routine</li>
+          <li>Technique, scales, articulation, and musicianship</li>
+          <li>Etude, audition, or solo preparation</li>
+          <li>Performance run-through and detailed feedback</li>
+        </ul>
       </div>
     </div>
 
@@ -394,18 +376,25 @@
 
   <section id="about">
     <h2 class="section-title">About Me</h2>
+
     <div class="about">
-      <img class="profile-photo" src="photo.jpg" alt="Michael Afu" />
-      <p>Michael Afu is a Sacramento-based music educator, performer, and founder of Afu Music Studio. He began his musical journey in elementary school before continuing through band programs in middle school and at Antelope High School, where he performed in the Wind Ensemble, the Marching Band, the Jazz Band, and multiple honor ensembles, including the California All-State Honor Band.</p>
-      <br />
-      <p>He earned his Bachelor of Arts in Music Education and Teaching Credential from California State University, Fresno, where he performed with the Fresno State Symphony Orchestra, Wind Orchestra, Symphonic Band, FOOSA (Fresno Summer Orchestra Academy), and Bulldog Marching Band. In addition to performing with various community bands and orchestras throughout California, he has also had opportunities to perform internationally and at prestigious venues, including performances in Australia and at the Walt Disney Concert Hall in Los Angeles.</p>
-     <br />
-      <p>He later completed his Master of Music in Music Technology at Southern Utah University. Through Afu Music Studio, Mr. Afu helps students build strong fundamentals, prepare for auditions, and grow into confident, capable musicians.</p>
+      <div class="about-top">
+        <img class="profile-photo" src="photo.jpg" alt="Michael Afu" />
+
+        <div class="about-text">
+          <p>Michael Afu is a Sacramento-based music educator, performer, and founder of Afu Music Studio. He began his musical journey in elementary school before continuing through band programs in middle school and at Antelope High School, where he performed in the Wind Ensemble, the Marching Band, the Jazz Band, and multiple honor ensembles, including the California All-State Honor Band.</p>
+
+          <p>He earned his Bachelor of Arts in Music Education and Teaching Credential from California State University, Fresno, where he performed with the Fresno State Symphony Orchestra, Wind Orchestra, Symphonic Band, FOOSA (Fresno Summer Orchestra Academy), and Bulldog Marching Band. In addition to performing with various community bands and orchestras throughout California, he has also had opportunities to perform internationally and at prestigious venues, including performances in Australia and at the Walt Disney Concert Hall in Los Angeles.</p>
+        </div>
+      </div>
+
+      <p class="about-final">He later completed his Master of Music in Music Technology at Southern Utah University. Through Afu Music Studio, Mr. Afu helps students build strong fundamentals, prepare for auditions, and grow into confident, capable musicians.</p>
     </div>
   </section>
 
   <section id="contact">
     <h2 class="section-title">Contact</h2>
+
     <div class="contact-box">
       <p><strong>Email:</strong> afumusicstudio.ca@gmail.com</p>
       <p><strong>Phone:</strong> <a href="tel:9162503744">(916) 250-3744</a></p>
